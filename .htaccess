@@ -1,0 +1,5 @@
+AddHandler application/x-httpd-php56 .php
+#redirect http to https
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
